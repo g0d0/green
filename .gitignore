@@ -1,2 +1,4 @@
 keys.json
 .bash_history
+core/__pycache__/*
+messages/__pycache__/*
