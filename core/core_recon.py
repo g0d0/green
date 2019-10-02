@@ -133,34 +133,7 @@ Operating System: {}
 Port: {}
         """.format(item['port']))
 
-
-
-
-
-
-
-def green_urlparse(url):
-    data = urlparse(url)
-    # Abre o dicionario
-    dicionario_url = {}
-
-    # Recebe HTTP ou HTTPS
-    dicionario_url[0] = data.scheme
-
-    # Recebe a URL
-    dicionario_url[1] = data.netloc
-
-    # Recebe o Path da aplicação
-    dicionario_url[2] = data.path
-    '''
-    print("TIPO:" + dicionario_url[0])
-    print("URL:" + dicionario_url[1])
-    print("PATH:" + dicionario_url[2])
-    '''
-    return dicionario_url
-
-
-
+# OK
 def green_traceroute(host_ip):
     # TODO traceroute abaixo não usa uma base publica
     #retorno_traceroute = traceroute(host_ip,maxttl=50)
@@ -168,52 +141,10 @@ def green_traceroute(host_ip):
     requisicao = requests.get(url_api + host_ip)
     return requisicao.text
 
-
-
-
-
-
-
-
-
-
-def green_googlesearch(url):
-    #termo_digitado = "site:" + url
-    #for inicia_resultados_em in [0, 10, 20, 30, 50]:
-    #    parametros_de_busca = {'q': termo_digitado, 'start': inicia_resultados_em}
-    #
-    #    pagina_de_busca = requests.get('https://www.google.com.br/search',
-    #                                   params=parametros_de_busca)
-    #
-    #    soup = BeautifulSoup(pagina_de_busca.text, "html.parser")
-    #
-    #    for item in soup.find_all('h3', attrs={'class': 'r'}):
-    #        if item.a:
-    #            link_sujo_do_google = item.a.attrs['href']
-    #            # /url?website.com%3Fid%3D100%26x%3Dy&ui=10....
-    #
-    #            link_sem_url_inicial = link_sujo_do_google[7:]
-    #            # website.com%3Fid%3D100%26x%3Dy&ui=10....
-    #
-    #            link_os_parametros_do_google = link_sem_url_inicial.split('&')[0]
-    #            # website.com%3Fid%3D100%26x%3Dy
-    #
-    #            link_final_decodificado = unquote(link_os_parametros_do_google)
-                # website.com?id=100&x=y
-
-                #TODO google hacking não funciona no momento
-                #print(link_final_decodificado)
-    #
-    #    dorme_por = randint(0, 2)
-    #    time.sleep(dorme_por)
-    print("Google Hacking não funciona no momento!")
-
-
-
-
-#
+# ----------------
 # HUNTER.io
-#
+# --------
+#OK
 def hunterio_search(url,key):
     hunterio = "https://api.hunter.io/v2/domain-search"
     try:
@@ -225,18 +156,3 @@ def hunterio_search(url,key):
 def green_hunterio(url):
     resposta_hunterio = json.loads(hunterio_search(url))
     return resposta_hunterio['results']
-
-#
-# PwnedOrNot
-#
-def pwnedornot_search(email):
-    pwnedornot = "https://haveibeenpwned.com/api/v3/breachedaccount"
-    try:
-        r = requests.get(pwnedornot, data={'domain': email})
-    except Exception as e:
-        print("Ocorreu um erro: %s" % (e))
-    return r.text
-
-def green_pwnedornot(url):
-    resposta_pwnedornot = json.loads(pwnedornot_search(url))
-    return resposta_pwnedornot

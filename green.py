@@ -87,18 +87,25 @@ else:
         key_shodan=key_open(NAME_KEYS,key)
         print(core_recon.green_shodansearch(ip,key_shodan))
         exit()
+    elif arguments.tipo == list_options[5]:
+        print("Traceroute")
+        # FIX - criar no topo algo que trate url e ips
+        ip = core_recon.green_gethostname(arguments.url)
+        print(core_recon.green_traceroute(ip))
+        exit()
 
     # PEOPLE
+    #OK
     elif arguments.tipo == "hunter-io":
         print("Hunter.io")
-        #key="hunter-io"
-        #whatcms_key=key_open(NAME_KEYS,key)
-        #print(core_recon.hunterio_search(arguments.url,whatcms_key))
-        #exit()
+        key="hunter-io"
+        hunterio_key=key_open(NAME_KEYS,key)
+        print(core_recon.hunterio_search(arguments.url,hunterio_key))
+        exit()
     elif arguments.tipo == "pwnedornot":
         print("pwnedornot")
-        #print(core_recon.green_pwnedornot(arguments.email))
-        #exit()
+        print(core_recon.green_pwnedornot(arguments.email))
+        exit()
     elif (arguments.url == None) or (arguments.email == None):
         core_menu.main_menu()
         exit()
