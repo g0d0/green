@@ -19,6 +19,24 @@ Vamos criar um arquivos chamado **keys.json** na raiz do projeto.
 }
 ```
 
+#### Criando key shodan
+```sh
+https://account.shodan.io/register
+```
+> Depois de logado podemos encontrar no topo **Show API Key**
+
+#### Criando key whatcms
+```sh
+https://whatcms.org/API
+```
+> Depois de criar uma conta você pode ter acesso a chave.
+
+#### Criando chave hunter.io
+```sh
+https://hunter.io/api_keys
+```
+> Depois de criar uma conta só precisamos entrar nesse link e obter a key.
+
 ### Criando container docker
 Vamos criar nossa imagem do docker com todos os requisitos necessarios.
 > Essa é uma versão **Beta** ainda.
@@ -30,7 +48,7 @@ sudo docker build -t "green:1" .
 
 Para usar a imagem podemos usar
 ```sh
-sudo docker container run -it --rm -v "${PWD}:/root" bash
+sudo docker container run -it --rm -v "${PWD}:/root" "green:1" bash
 ```
 > Dessa forma só precisar ir até o diretorio **cd ~** e dar um **ls** para listar o diretorio.
 
