@@ -6,7 +6,6 @@
 #date            :04 Agosto 2018
 #version         :0.3DEV
 
-
 #=======================================================================
 #Modulos
 import sys, os ,time, subprocess,random
@@ -38,10 +37,6 @@ def version():
     print(VERSION)
     core_menu.espera()
 
-
-
-
-
 # DEFINIÇÃO DE MENUS
 menu_actions = {
     'main_menu': core_menu.main_menu,
@@ -56,8 +51,6 @@ menu_actions = {
     'exit': core_menu.exit,
     'version': version,
 }
-
-
 
 if __name__ == "__main__":
 
