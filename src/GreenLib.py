@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 
 #title           :GreenLib.py
 #description     :Este arquivo tem como meta ser a LIB principal de conexão do projeto Green
